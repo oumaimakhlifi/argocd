@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name:  astonvilla-app
+  namespace: argocd
+spec:
+  project: default
+  destination:
+    namespace: default
+    server: "https://kubernetes.default.svc"
+  source:
+    path: guestbook # you chould provide the folder or the helm repo in the git repo
+    repoURL: "https://github.com/kakachiSensei/work-with-ArgoCD.git" # the url of the github repository
+    targetRevison: master # the branch of the github repository.We can use Head or a specific version
+  syncPolicy:
+    automated: {} # This will detect changes automatically from the repository
+    syncOptions:
+      - CreateNamespace=true
