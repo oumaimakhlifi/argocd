@@ -9,9 +9,9 @@ spec:
     namespace: default
     server: "https://kubernetes.default.svc"
   source:
-    path: guestbook # you chould provide the folder or the helm repo in the git repo
-    repoURL: "https://github.com/kakachiSensei/work-with-ArgoCD.git" # the url of the github repository
-    targetRevison: master # the branch of the github repository.We can use Head or a specific version
+    path: astonvilla-app # you chould provide the folder or the helm repo in the git repo
+    repoURL: "https://github.com/kakachiSensei/k8s-manifests.git" # the url of the github repository
+    targetRevison: HEAD # the branch of the github repository.We can use Head or a specific version
   syncPolicy:
     automated: {} # This will detect changes automatically from the repository
     syncOptions:
