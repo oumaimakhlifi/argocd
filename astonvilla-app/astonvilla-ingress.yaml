@@ -1,0 +1,21 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: astonvilla-ingress
+spec:
+  ingressClassName: nginx
+  tls:
+  - hosts:
+    - app.astonvilla.com
+    secretName: astonvilla-secret
+  rules:
+  - host: app.astonvilla.com
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: astonvilla-svc
+            port:
+              number: 8080
