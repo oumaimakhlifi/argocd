@@ -4,10 +4,6 @@ metadata:
   name: astonvilla-ingress
 spec:
   ingressClassName: nginx
-  tls:
-  - hosts:
-    - app.astonvilla.com
-    secretName: astonvilla-secret
   rules:
   - host: app.astonvilla.com
     http:
