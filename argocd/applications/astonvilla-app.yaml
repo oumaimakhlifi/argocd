@@ -7,9 +7,9 @@ spec:
   project: default
   destination:
     namespace: default
-    server: "https://kubernetes.default.svc"
+    server: <provide_your_k8s_cluster_url>
   source:
-    path: astonvilla-app # you chould provide the folder or the helm repo in the git repo
+    path: astonvilla-app # you chould provide the folder in the git repo
     repoURL: "https://github.com/kakachiSensei/k8s-manifests.git" # the url of the github repository
     targetRevison: HEAD # the branch of the github repository.We can use Head or a specific version
   syncPolicy:
