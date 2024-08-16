@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pv-pvc
+spec:
+  selector:
+    matchLabels:
+      app: pv-pvc
+  template:
+    metadata:
+      labels:
+        app: pv-pvc
+    spec:
+      volumes: 
+        - name: data
+          persistentVolumeClaim:
+            claimName: hello-pvc # here we took the name of the persistent volume claim we created it separatly
+      containers:
+      - name: nginx
+        image: nginx
+        volumeMounts:
+          - mountPath: "/usr/share/nginx/html" # this is the path inside the container we mount the volume in it.
+            name: data
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 80
