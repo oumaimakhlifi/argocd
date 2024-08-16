@@ -11,4 +11,4 @@ spec:
   persistentVolumeReclaimPolicy: Recycle
   storageClassName: "manual"
   hostPath:
-    path: "/mnt/data" # this directory is located in the  host and it contains a file called index.html(we created it)
+    path: "/mnt/index" # this directory is located in the  host and it contains a file called index.html(we created it)
