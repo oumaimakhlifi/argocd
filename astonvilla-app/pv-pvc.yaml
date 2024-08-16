@@ -8,10 +8,13 @@ spec:
   volumeMode: Filesystem
   accessModes:
     - ReadWriteOnce
-  persistentVolumeReclaimPolicy: Recycle
+  persistentVolumeReclaimPolicy: Retain  # Replaced 'Recycle' with 'Retain'
   storageClassName: "manual"
   hostPath:
     path: "/mnt/index"
+  # Optionally, you can add labels to match the PVC:
+  labels:
+    type: local
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
@@ -31,6 +34,7 @@ kind: Deployment
 metadata:
   name: pv-pvc
 spec:
+  replicas: 1  # It's good practice to explicitly define the number of replicas
   selector:
     matchLabels:
       app: pv-pvc
@@ -42,12 +46,12 @@ spec:
       volumes: 
         - name: data
           persistentVolumeClaim:
-            claimName: hello-pvc # here we took the name of the persistent volume claim we created it separatly
+            claimName: hello-pvc
       containers:
       - name: nginx
         image: nginx
         volumeMounts:
-          - mountPath: "/usr/share/nginx/html" # this is the path inside the container we mount the volume in it.
+          - mountPath: "/usr/share/nginx/html"
             name: data
         resources:
           limits:
