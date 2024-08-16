@@ -5,7 +5,7 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-  - host: astonvilla.9antra.tn
+  - host: astonvilla.tn
     http:
       paths:
       - path: /
