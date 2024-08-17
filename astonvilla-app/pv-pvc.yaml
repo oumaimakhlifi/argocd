@@ -26,6 +26,8 @@ kind: Pod
 metadata:
   name: demo-pod
 spec:
+  nodeSelector:
+    kubernetes.io/hostname: worker
   containers:
     - name: demo-container
       image: nginx
