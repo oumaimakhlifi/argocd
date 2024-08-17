@@ -26,6 +26,7 @@ kind: Pod
 metadata:
   name: demo-pod
 spec:
+  nodeName: worker
   containers:
     - name: demo-container
       image: nginx
