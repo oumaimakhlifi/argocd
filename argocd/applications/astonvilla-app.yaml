@@ -10,7 +10,7 @@ spec:
     server: <provide_your_k8s_cluster_url>
   source:
     path: astonvilla-app # you chould provide the folder in the git repo
-    repoURL: "https://github.com/kakachiSensei/argocd.git" # the url of the github repository
+    repoURL: "https://github.com/oumaimakhlifi/argocd.git" # the url of the github repository
     targetRevison: HEAD # the branch of the github repository.We can use Head or a specific version
   syncPolicy:
     automated: {} # This will detect changes automatically from the repository
