@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name:  astonvilla-app
+  name: astonvilla-app
   namespace: argocd
 spec:
   project: default
@@ -9,9 +9,9 @@ spec:
     namespace: default
     server: https://kubernetes.default.svc
   source:
-    path: astonvilla-app # you chould provide the folder in the git repo
-    repoURL: "https://github.com/oumaimakhlifi/argocd.git" # the url of the github repository
-    targetRevison: HEAD # the branch of the github repository.We can use Head or a specific version
+    path: astonvilla-app # you should provide the folder in the git repo
+    repoURL: "https://github.com/oumaimakhlifi/argocd.git" # the URL of the GitHub repository
+    targetRevision: HEAD # the branch of the GitHub repository. We can use HEAD or a specific version
   syncPolicy:
     automated: {} # This will detect changes automatically from the repository
     syncOptions:
