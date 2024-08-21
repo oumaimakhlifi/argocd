@@ -7,7 +7,7 @@ spec:
   project: default
   destination:
     namespace: default
-    server: <provide_your_k8s_cluster_url>
+    server: https://kubernetes.default.svc
   source:
     path: astonvilla-app # you chould provide the folder in the git repo
     repoURL: "https://github.com/oumaimakhlifi/argocd.git" # the url of the github repository
