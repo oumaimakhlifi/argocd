@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
       - name: astonvilla-app
-        image: oumaimakhelifi/astonvilla-app:1.1.19
+        image: oumaimakhelifi/astonvilla-app:1.1.25
         ports:
         - containerPort: 80
