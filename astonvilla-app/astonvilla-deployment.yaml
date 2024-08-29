@@ -3,7 +3,6 @@ kind: Deployment
 metadata:
   name: astonvilla-app
 spec:
-  replicas: 2
   selector:
     matchLabels:
       app: astonvilla-app
@@ -13,7 +12,12 @@ spec:
         app: astonvilla-app
     spec:
       containers:
-      - name: astonvilla-app
-        image: oumaimakhelifi/astonvilla-app:1.1.26
-        ports:
-        - containerPort: 80
+        - name: astonvilla-app
+          image: oumaimakhelifi/astonvilla-app:1.1.17
+          ports:
+            - containerPort: 80
+          resources:
+            requests:
+              cpu: "100m"
+              memory: "256Mi"
+         
